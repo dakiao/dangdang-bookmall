@@ -42,10 +42,9 @@ public class OrderinfoController {
     public R test(){
         OrderinfoEntity orderinfoEntity = new OrderinfoEntity();
         orderinfoEntity.setId(1L);
-        orderinfoEntity.setCode("1erf-we25-de4c-f78d");
+        orderinfoEntity.setCode("1erf-we25-de4c-f79d");
         R book = productFeignService.setAndGetBook();
         return R.ok().put("orderinfo",orderinfoEntity).put("book",book.get("book"));
-
     }
 
     /**
@@ -55,7 +54,6 @@ public class OrderinfoController {
     //@RequiresPermissions("order:orderinfo:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderinfoService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 
